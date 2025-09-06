@@ -435,9 +435,12 @@ section.my-work {
 
 @media (max-width: 900px) {
   .pdf-embed {
-    max-width: 98vw;
-    min-height: 280px;
-    aspect-ratio: 16/10; /* proporção mais vertical para tablets/celular */
+    display: none;
+  }
+  .download-btn {
+    display: block;
+    width: 100%;
+    margin-top: 0.7em;
   }
 }
 
