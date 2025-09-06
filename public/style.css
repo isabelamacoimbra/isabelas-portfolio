@@ -422,13 +422,23 @@ section.my-work {
   color: #1B4965;
 }
 
-.pdf-viewer {
+.pdf-embed {
   width: 100%;
-  margin: 1rem 0 1.3rem 0;
-  border: 1px solid #1B4965;
+  max-width: 800px;      /* Limite para desktop, ajuste para seu layout */
+  aspect-ratio: 16/9;    /* Mantém retangular e proporcional */
+  min-height: 480px;     /* Garante mínimo decente em desktop */
+  border: 1.5px solid #A8DADC;
   border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
+  margin: 1.2rem auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .pdf-embed {
+    max-width: 98vw;
+    min-height: 280px;
+    aspect-ratio: 16/10; /* proporção mais vertical para tablets/celular */
+  }
 }
 
 .work-item p {
@@ -534,4 +544,25 @@ input[type="submit"] {
   font-size: 1rem; /* ou o valor usado na maioria dos botões, geralmente entre 1rem e 1.15rem */
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
+}
+
+.download-btn {
+  display: inline-block;
+  margin: 0.5rem 0 1.3rem 0;
+  padding: 0.35em 1em;
+  font-size: 0.95rem;
+  border-radius: 9px;
+  background: #A8DADC;
+  color: #1B4965;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 13px rgba(27,73,101,0.16);
+}
+.download-btn:hover,
+.download-btn:focus {
+  background: #84bfc1;
+  color: #033c57;
 }
