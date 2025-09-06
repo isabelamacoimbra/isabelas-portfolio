@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="container">
     <nav class="menu">
@@ -30,7 +32,6 @@
 
   <main class="container">
     <section class="contact-form-section">
-      <h1>Contact</h1>
       <form id="contact-form" class="contact-form" method="POST">
         <div class="form-row">
           <div class="form-group">
@@ -73,7 +74,7 @@
   </footer>
 
   <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
@@ -83,16 +84,17 @@
         body: data,
         headers: { 'Accept': 'application/json' }
       })
-      .then(response => {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
-        } else {
-          alert('Error submitting the form. Please try again.');
-        }
-      })
-      .catch(() => alert('Error submitting the form. Please try again.'));
+        .then(response => {
+          if (response.ok) {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            alert('Error submitting the form. Please try again.');
+          }
+        })
+        .catch(() => alert('Error submitting the form. Please try again.'));
     });
   </script>
 </body>
+
 </html>
